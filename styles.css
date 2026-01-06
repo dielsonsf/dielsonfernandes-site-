@@ -1,0 +1,726 @@
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #25D366;
+    --primary-dark: #20BA5A;
+    --primary-light: #DCF8C6;
+    --whatsapp-green: #25D366;
+    --whatsapp-green-dark: #20BA5A;
+    --whatsapp-green-light: #4AE168;
+    --accent-orange: #FF6B35;
+    --accent-orange-light: #FF8C5A;
+    --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --text-white: #ffffff;
+    --text-light: #e5e7eb;
+    --text-muted: #9ca3af;
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-section: #111111;
+    --border-color: #2a2a2a;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+    --shadow-whatsapp: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+
+.highlight-orange {
+    color: var(--accent-orange);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: var(--bg-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-headline {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.hero-subheadline {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-target {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Botões WhatsApp */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.125rem 2.5rem;
+    background: var(--whatsapp-green);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-whatsapp);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-whatsapp:hover {
+    background: var(--whatsapp-green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.btn-whatsapp.btn-large {
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+}
+
+.btn-whatsapp.btn-secondary {
+    background: var(--whatsapp-green);
+    color: var(--text-white);
+    box-shadow: var(--shadow-whatsapp);
+}
+
+.btn-whatsapp.btn-secondary:hover {
+    background: var(--whatsapp-green-light);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* Bloco de Dor */
+.pain-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.pain-section .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pain-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pain-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.pain-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: var(--shadow-glow);
+}
+
+.pain-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.pain-item p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* Bloco de Posicionamento */
+.positioning-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+    text-align: center;
+}
+
+.positioning-headline {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.positioning-subtext {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.positioning-simplify {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* Bloco de Serviços */
+.services-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(139, 92, 246, 0.5);
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.services-cta-text {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bloco de Quebra de Objeções */
+.objections-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.objections-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.objection-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.objection-item:hover {
+    border-color: rgba(255, 107, 53, 0.5);
+    box-shadow: var(--shadow-glow);
+}
+
+.objection-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent-orange);
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.objection-item p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* Bloco de Benefícios */
+.benefits-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+}
+
+.benefits-headline {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: var(--shadow-glow);
+}
+
+.benefit-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-primary);
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.benefit-item p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* Bloco Como Funciona */
+.how-it-works-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.how-it-works-section .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 3rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.step-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: var(--shadow-glow);
+}
+
+.step-number {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.step-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-white);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Bloco de Prova Social */
+.social-proof-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+    text-align: center;
+}
+
+.social-proof-section .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+.social-proof-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-proof-text {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.social-proof-example {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.example-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-bottom: 0.75rem;
+}
+
+.example-flow {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* CTA Final */
+.final-cta-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.final-cta-headline {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.final-cta-section .btn-whatsapp {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    bottom: 24px;
+    right: 24px;
+    background: var(--whatsapp-green);
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-whatsapp);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: var(--whatsapp-green-light);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 24px rgba(37, 211, 102, 0.6);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção Title Genérico */
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .hero-headline {
+        margin-bottom: 1rem;
+    }
+
+    .hero-subheadline {
+        margin-bottom: 2rem;
+    }
+
+    .btn-whatsapp {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .btn-whatsapp.btn-large {
+        padding: 1.125rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .pain-list {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .objections-list {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline {
+        font-size: 1.75rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1rem;
+    }
+
+    .btn-whatsapp {
+        font-size: 0.9375rem;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .pain-item,
+    .benefit-item {
+        padding: 1.25rem;
+    }
+}

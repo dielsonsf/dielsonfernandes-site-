@@ -1,0 +1,13 @@
+# Backup folder
+backup_antes_ajustes/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
