@@ -511,19 +511,23 @@ html {
 }
 
 .social-proof-example {
-    background: var(--bg-card);
-    padding: 2rem;
+    background: #1a1a1a;
+    padding: 0;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
-    max-width: 700px;
+    border: 1px solid #2a2a2a;
+    max-width: 800px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .example-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--accent-orange);
-    margin-bottom: 0.75rem;
+    margin: 0;
+    padding: 1.5rem 2rem 1rem 2rem;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 .example-flow {
@@ -531,6 +535,15 @@ html {
     color: var(--text-light);
     line-height: 1.7;
     margin: 0;
+}
+
+/* Flowchart Image */
+.flowchart-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
 }
 
 /* CTA Final */
